@@ -4,10 +4,9 @@
 ![iOSinterview.jpg](http://upload-images.jianshu.io/upload_images/3352035-35c38cf697870034.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 
- <简书社区 — Timhbw>[iOS基础问答面试题连载(一)-附答案](http://www.jianshu.com/p/1ebf7333808d)
- <简书社区 — Timhbw>[iOS基础问答面试题连载(二)-附答案](http://www.jianshu.com/p/ce50261f8907)
- <简书社区 — Timhbw>[iOS基础问答面试题连载(三)-附答案](http://www.jianshu.com/p/5fd65c20912e)
-
+ <**Timhbw**>[iOS基础问答面试题连载(一)-附答案](https://github.com/Timhbw/iOSInterviewQuestions/blob/master/iOS%E5%9F%BA%E7%A1%80%E9%97%AE%E7%AD%94%E9%9D%A2%E8%AF%95%E9%A2%98%E8%BF%9E%E8%BD%BD-%E9%99%84%E7%AD%94%E6%A1%88/iOS%E5%9F%BA%E7%A1%80%E9%97%AE%E7%AD%94%E9%9D%A2%E8%AF%95%E9%A2%98%E8%BF%9E%E8%BD%BD(%E4%B8%80)-%E9%99%84%E7%AD%94%E6%A1%88.md)
+ <**Timhbw**>[iOS基础问答面试题连载(二)-附答案](https://github.com/Timhbw/iOSInterviewQuestions/blob/master/iOS%E5%9F%BA%E7%A1%80%E9%97%AE%E7%AD%94%E9%9D%A2%E8%AF%95%E9%A2%98%E8%BF%9E%E8%BD%BD-%E9%99%84%E7%AD%94%E6%A1%88/iOS%E5%9F%BA%E7%A1%80%E9%97%AE%E7%AD%94%E9%9D%A2%E8%AF%95%E9%A2%98%E8%BF%9E%E8%BD%BD(%E4%BA%8C)-%E9%99%84%E7%AD%94%E6%A1%88.md)
+  <**Timhbw**>[iOS基础问答面试题连载(三)-附答案](https://github.com/Timhbw/iOSInterviewQuestions/blob/master/iOS%E5%9F%BA%E7%A1%80%E9%97%AE%E7%AD%94%E9%9D%A2%E8%AF%95%E9%A2%98%E8%BF%9E%E8%BD%BD-%E9%99%84%E7%AD%94%E6%A1%88/iOS%E5%9F%BA%E7%A1%80%E9%97%AE%E7%AD%94%E9%9D%A2%E8%AF%95%E9%A2%98%E8%BF%9E%E8%BD%BD(%E4%B8%89)-%E9%99%84%E7%AD%94%E6%A1%88.md)
 ####这次的问题是网络多线程相关的哟，面试的时候也是必问的，大家多看看
 
 >11月24日修正一处错误:18、19题目一样,答案不一样(其实是两种理解，修改为最优的一种放上来.多谢读者提醒)
