@@ -18,7 +18,7 @@ iOS基础问答面试题连载-附答案
 
 
 
-![enter image description here](http://cdn.huangbowei.com/images/historyApplogo.png)
+![fighting!!](http://cdn.huangbowei.com/images/historyApplogo.png)
 
 
 
