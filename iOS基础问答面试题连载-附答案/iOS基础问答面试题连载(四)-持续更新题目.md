@@ -1,7 +1,7 @@
 >该文章属于**Timhbw**原创，转载请注明： <Timhbw>[https://github.com/Timhbw/iOSInterviewQuestions)
 
 
-![iOSinterview.jpg](http://upload-images.jianshu.io/upload_images/3352035-35c38cf697870034.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![iOSinterview.jpg](https://timhbw.com/wp-content/uploads/2017/06/71_iosinterviewquestion.png)
 
 <**Timhbw**>[iOS基础问答面试题连载(一)-附答案](https://github.com/Timhbw/iOSInterviewQuestions/blob/master/iOS%E5%9F%BA%E7%A1%80%E9%97%AE%E7%AD%94%E9%9D%A2%E8%AF%95%E9%A2%98%E8%BF%9E%E8%BD%BD-%E9%99%84%E7%AD%94%E6%A1%88/iOS%E5%9F%BA%E7%A1%80%E9%97%AE%E7%AD%94%E9%9D%A2%E8%AF%95%E9%A2%98%E8%BF%9E%E8%BD%BD(%E4%B8%80)-%E9%99%84%E7%AD%94%E6%A1%88.md)
  <**Timhbw**>[iOS基础问答面试题连载(二)-附答案](https://github.com/Timhbw/iOSInterviewQuestions/blob/master/iOS%E5%9F%BA%E7%A1%80%E9%97%AE%E7%AD%94%E9%9D%A2%E8%AF%95%E9%A2%98%E8%BF%9E%E8%BD%BD-%E9%99%84%E7%AD%94%E6%A1%88/iOS%E5%9F%BA%E7%A1%80%E9%97%AE%E7%AD%94%E9%9D%A2%E8%AF%95%E9%A2%98%E8%BF%9E%E8%BD%BD(%E4%BA%8C)-%E9%99%84%E7%AD%94%E6%A1%88.md)

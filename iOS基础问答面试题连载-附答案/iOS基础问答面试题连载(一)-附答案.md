@@ -1,7 +1,7 @@
 >该文章属于**Timhbw**原创，转载请注明： <Timhbw>[https://github.com/Timhbw/iOSInterviewQuestions)
 
 
-![iOSinterview.jpg](http://upload-images.jianshu.io/upload_images/3352035-ecfa8100bab890a1.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![iOSinterview.jpg](https://timhbw.com/wp-content/uploads/2017/06/71_iosinterviewquestion.png)
 
 
 
@@ -11,112 +11,106 @@
 
 - 以下是一些自己收集的比较基础的问题（大神可以忽略），附上答案，方便大家阅读。俗话说得好，基础不牢，地动山摇。文章末尾会提供PDF版的文档，方便大家木有网的时候也可以用移动设备观看。
 
-##1.简单的描述下类扩展和分类的区别?(说2点)
+- 20170513更正第一题，感谢[SHY圆圆圈圈圆圆](http://www.jianshu.com/u/2ec9d8e80f78)，[参考链接](http://stackoverflow.com/questions/8733104/objective-c-property-instance-variable-in-category)。
 
-- 类扩展没有名字,分类有名字
+##1.简单的描述下类扩展(extension)和分类(category)的区别?
+- 类扩展(也称匿名分类)没有名字,分类有名字；
+- 类扩展中新添加的方法必须要实现，分类可以不实现；
+- 类扩展是分类的一个特例，可以为一个类添加一些私有的成员变量和方法；分类可以在不修改原来类的基础上，为一个类扩展方法，一般用于给系统自带的类扩展方法，不能添加成员变量，如果一定要添加，可以通过 runtime 动态添加。
 
--  类扩展可以为某个类增加额外的属性、成员变量、方法声明;分类只能扩充方法,不能扩充成员变量,如果在分类中声明了一个属性,分类只会生成这个属性的get\set方法声明
+##2.简要的说明 UIView 的 frame 和 bounds 的区别
 
-##2.简要的说明UIView的frame和bounds的区别
-
-- frame表示的是控件矩形框在父控件中的位置和尺寸,是以父控件的左上角为坐标原点.
-
-- bounds表示的是控件矩形框的位置和尺寸,是以自己的左上角为坐标原点.
+- frame 表示的是控件矩形框在父控件中的位置和尺寸，它以父控件的左上角为坐标原点(在 iOS 坐标系中以左上角为坐标原点，往右为 X 轴正方向，往下是 Y 轴正方向)。
+- bounds 表示的是控件矩形框的位置和尺寸,是以自己的左上角为坐标原点。
 
 ##3.什么是控制器
-
-- 凡是继承自UIViewController的对象都是控制器.
+- 凡是继承自UIViewController的对象都是控制器。
 
 ##4.简单的描述控制器的作用
+- 负责处理软件界面的各种事件，并负责软件界面的创建和销毁.
 
-- 负责处理软件界面的各种事件,并负责软件界面的创建和销毁.
-
-##5.简单的描述下storyboard的作用
-
-- 用来描述描述软件界面的
+##5.简单的描述下 Storyboard 的作用
+- 用来描述描述软件界面的。
 
 ##6.简述程序的启动原理
+- 1.执行 Main
+- 2.执行 UIApplicationMain 函数.
+- 3.创建 UIApplication 对象,并设置 UIApplicationMain 对象的代理.UIApplication 的第三个参数就是 UIApplication 的名称,如果指定为nil,它会默认为 UIApplication.UIApplication 的第四个参数为 UIApplication 的代理.
+- 4.开启一个主运行循环.保证应用程序不退出.
+- 5.加载 info.plist。加载配置文件.判断一下 info.plist 文件当中有没有 Main storyboard file base name,里面有没有指定 Storyboard 文件,如果有就去加载 info.plist 文件,如果没有,那么应用程序加载完毕.
 
-- 程序一启动，就会加载Main.storyboard文件;会创建箭头所指的控制器，并显示控制器所管理的软件界面
+##7.IBOutLet 有什么作用
+- 被 IBOutlet 修饰的属性能拖线到 Storyboard 中,而且只能修饰属性。
 
-##7.IBOutLet有什么作用
+##8.IBAction 有什么作用
+- 被 IBAction 修饰的方法能拖线到 Storyboard 中,只能修饰方法返回值类型。
 
-- 被IBOutlet修饰的属性能拖线到storyboard中,而且只能修饰属性.
-
-##8.IBAction有什么作用
-
-- 被IBAction修饰的方法能拖线到storyboard中,只能修饰方法返回值类型
-
-##9.IBAction和IBOutLet前缀IB是什么意思
-
-- IB全称:Interface Builder,从Xcode4开始,Interface Builder已经整合到Xcode中
+##9.IBAction 和 IBOutLet 前缀IB是什么意思
+- IB全称:Interface Builder,从 Xcode4 开始,Interface Builder 已经整合到Xcode 中。
 
 ##10.简单描述父子控件
-
 - 每个控件都是个容器，能容纳其他控件;内部小控件是大控件的子控件;大控件是内部小控件的父控件
 
 -----
 
 ##11. 解释下引用资源的时候每个选项的含义
-- copy:勾选copy,会把资源拷贝一份到项目的文件夹中(建议勾选,因为这样修改项目中的资源不会影响源资源)
-- Added folder:如果勾选Create groups,只会会创建一个虚拟的文件夹,程序打包后,安装包中不存在这个文件夹;如果勾选Create folder references,真的创建一个文件夹,程序打包后,安装包中真的有这个文件夹.
-- Add to targets:要不要把资源打包到软件安装包中去.一定要勾选,不勾选到时候程序打包后,安装包中没有这个资源.
+- copy:勾选 copy,会把资源拷贝一份到项目的文件夹中(建议勾选,因为这样修改项目中的资源不会影响源资源)。
+- Added folder:如果勾选 Create groups,只会会创建一个虚拟的文件夹,程序打包后,安装包中不存在这个文件夹;如果勾选 Create folder references,真的创建一个文件夹,程序打包后,安装包中真的有这个文件夹。
+- Add to targets:要不要把资源打包到软件安装包中去.一定要勾选,不勾选到时候程序打包后,安装包中没有这个资源。
 
 ##12.UILabel如何设置自动换行
-- 设置numberOflines 为0.
+- 设置 numberOflines 为0。
 
 ##13.Character Wrap和Word Wrap的区别
-- Character Wrap 字符包裹;
-- Word Wrap 单词包裹<保证单词的完整性>
+- Character Wrap 字符包裹；
+- Word Wrap 单词包裹，保证单词的完整性。
 
 ##14.contentMode的作用
-- 内容模式: 一般用来控制图片如何显示
+- 内容模式: 一般用来控制图片如何显示。
 
 -----
 
 ##15.initWithImage:的作用?
-- 根据传入的图片对象创建UIImageView对象;并且UIImageView的尺寸默认等于图片的尺寸
+- 根据传入的图片对象创建 UIImageView 对象;并且 UIImageView 的尺寸默认等于图片的尺寸。
 
-##16.如何修改一个控件的frame属性?
-- 1.直接使用CGRectMake函数
-- 2.利用临时结构体变量
-- 3.直接运用结构体赋值
+##16.如何修改一个控件的 frame 属性?
+- 1.直接使用 CGRectMake 函数；
+- 2.利用临时结构体变量；
+- 3.直接运用结构体赋值。
 
-##17.如何抽方法?
-- 先把相同的代码抽到方法中
-- 把要变化的东西换成变量,然后编译,把报错的设置为方法的参数
+##17.如何抽取方法?
+- 先把相同的代码抽到方法中；
+- 把要变化的东西换成变量,然后编译,把报错的设置为方法的参数。
 
 ##18.通过imageNamed:这个方法加载图片有什么特点?
-- 有缓存
-`UIImage *image =[UIImage imageNamed:@"图片名"]`
+- 图片会产生缓存，`UIImage *image =[UIImage imageNamed:@"图片名"]`
 - 使用场合：图片比较小、使用频率比较高
-- 建议：把需要缓存的图片放到Images.xcassets
+- 建议：把需要缓存的图片放到 Images.xcassets
 
-##19.开发如何选择UILabel,UIImageView,UIButton
-- 能用UILabel,UIImageView的尽量用UILabel,UIImageView;需要和用户交互用UIButton
-
+##19.开发如何选择 UILabel,UIImageView,UIButton
+- 能用 UILabel,UIImageView 的尽量用 UILabel,UIImageView;需要和用户交互用UIButton。
 -----
 
 ##20.什么是自定义控件
-- 继承自系统的控件写一个自己的控件,目的是封装控件内部的细节
+- 继承自系统的控件写一个自己的控件,目的是封装控件内部的细节。
 
 ##21.通过代码如何自定义控件? 并且简单的描述下每一个步骤的理由?
-- 新建一个继承UIView的类,(所谓自定义控件就是继承系统自带的控件写一个自己的控件)
-- 在initWithFrame方法中添加子控件(保证别人在外面不管是通过init还是initWithFrame创建都能够添加子控件,因为init方法内部会调用initWithFrame                    
-- 在layoutSubViews方法中设置子控件的frame(因为在InitWithFrame方法中当前控件尺寸可能没值,所以计算不了子控件的位置和尺寸,而在layoutSubViews方法,能够拿到当前控件的尺寸)
-- 提供一个模型属性，重写模型属性的set方法(保证在别人在设置数据的那一刻就可以拿到数据设置到对应的子控件上)
+- 新建一个继承 UIView 的类,(所谓自定义控件就是继承系统自带的控件写一个自己的控件)
+- 在 initWithFrame 方法中添加子控件(保证别人在外面不管是通过 init 还是initWithFrame 创建都能够添加子控件,因为 init 方法内部会调用initWithFrame；                   
+- 在 layoutSubViews 方法中设置子控件的 frame(因为在 InitWithFrame 方法中当前控件尺寸可能没值,所以计算不了子控件的位置和尺寸,而在layoutSubViews 方法,能够拿到当前控件的尺寸)；
+- 提供一个模型属性，重写模型属性的set方法(保证在别人在设置数据的那一刻就可以拿到数据设置到对应的子控件上)。
 
 ##22.什么是模型
 - 概念：专门用来存放数据的对象
-- 特点：一般继承NSObject，在.h文件中声明一些用来存放数据的属性
+- 特点：一般继承 NSObject，在.h文件中声明一些用来存放数据的属性
 
-##23.通过XIB如何自定义控件? 并且简单的描述下每一个步骤的理由?
-- 1.新建一个继承UIView的类,(所谓自定义控件就是继承系统自带的控件写一个自己的控件)
-- 2.新建一个xib文件（xib的文件名最好和类名一样）
-- 3.修改最外面那个控件的class为控件类名(只有修改类名,当时候从xib中出来的才是我这种类型的控件)
-- 4.提供一个模型属性，重写模型属性的set方法(保证在别人在设置数据的那一刻就可以拿到数据设置到对应的子控件上)
+##23.通过 XIB 如何自定义控件? 并且简单的描述下每一个步骤的理由?
+- 1.新建一个继承 UIView 的类,(所谓自定义控件就是继承系统自带的控件写一个自己的控件)
+- 2.新建一个 xib 文件（xib 的文件名最好和类名一样）
+- 3.修改最外面那个控件的 class 为控件类名(只有修改类名,当时候从 xib 中出来的才是我这种类型的控件)
+- 4.提供一个模型属性，重写模型属性的 set 方法(保证在别人在设置数据的那一刻就可以拿到数据设置到对应的子控件上)
 
-##24.instancetype和id的区别
+##24.instancetype 和 id 的区别
 - 都可以代表任意类型
 - instancetype只能作为返回值
 - id类型可以作为返回值,也可以作为参数,也可以定义变量
@@ -129,36 +123,35 @@
 - 一个对象只要有强指针引用，就不会被销毁
 
 ##26.懒加载的好处?
-- 用到时再加载,只会加载一次
+- 用到时再加载,只会加载一次。
 
 -----
 
-##27.如果是通过xib或者storyboard创建控件，初始化的操作可以在initWithFrame:方法中做吗? 
-- 如果是通过xib或者storyboard创建控件，初始化时是不会调用initWithFrame,会调用initWithCoder.初始化完毕会调用awakeFromNib方法,建议在awakeFromNib中做初始化
+##27.如果是通过 xib 或者 Storyboard 创建控件，初始化的操作可以在initWithFrame:方法中做吗? 
+- 如果是通过 xib 或者 storyboard 创建控件，初始化时是不会调用initWithFrame,会调用 initWithCoder.初始化完毕会调用 awakeFromNib 方法,建议在 awakeFromNib 中做初始化
 
-##28.通过alloc/init或者alloc/initWithFrame创建控件会不会主动加载xib?  
-- 通过alloc/init或者alloc/initWithFrame创建控件不会主动加载xib,即使xib的名称和控件的类名一样
+##28.通过 alloc/init 或者 alloc/initWithFrame 创建控件会不会主动加载xib? 
+- 通过alloc/init或者alloc/initWithFrame创建控件不会主动加载xib,即使xib的名称和控件的类名一样。
 
-##29.用一个属性引用UI控件的时候为什么可以用weak?  
-- 因为UI控件添加到父控件中以后,会有强指针指向这个对象,就应经可以保证这个对象不会被销毁.在搞一个属性引用这个对象,用弱引用就可以.
+##29.用一个属性引用 UI 控件的时候为什么可以用 weak?  
+- 因为 UI 控件添加到父控件中以后,会有强指针指向这个对象,就应经可以保证这个对象不会被销毁.在搞一个属性引用这个对象,用弱引用就可以.
 
 ##30.如何隐藏一个控件?  
-- 设置hidden为YES;
-- 设置alpha为0.0.
+- 设置 hidden 为 YES;
+- 设置 alpha 为0.0.
 
 ##31.如何用按钮来实现图片上文字下的效果？
 ```
 自定义按钮,实现
 -（CGRect）titleRectForContentRect:(CGRect)contentRect
 {
-    // 返回文字的frame
+    // 返回文字的 frame
 }
 -  (CGRect)imageRectForContentRect:(CGRect)contentRect
 {
-    // 返回图片的frame
+    // 返回图片的 frame
 }
-
-- 自定义按钮,实现layoutSubViews方法调整按钮内部子控件的位置和尺寸
+- 自定义按钮,实现 layoutSubViews 方法调整按钮内部子控件的位置和尺寸
 ```
 
 ##32.通过代码如何设置的内边距?
@@ -175,14 +168,14 @@ bg = [bg resizableImageWithCapInsets:UIEdgeInsetsMake(10,10,10,10) resizingMode:
 UIImage *bg = ...
 ```
 
-##34.在xcode中如何配置拉伸图片?  
+##34.在 Xcode 中如何配置拉伸图片?  
 - 选中图片--->右边(Slicing)-->Sices:Horizontal and Vertical -->上下左右设置
 
-##35.KVC的作用?  
-- Key Value Coding 键值编码,可以修改属性的值,并且可以修改私有的成员比变量;可以取值
+##35.KVC 的作用?  
+- Key Value Coding 键值编码,可以修改属性的值,并且可以修改私有的成员变量;可以取值。
 -----
 
-##36.如何监听scrollView停止滚动?
+##36.如何监听 scrollView 停止滚动?
 - 1.设置scrollView的代理
 - 2.代理对象遵守<UIScrollViewDelegate>协议
 - 3.实现协议里面
@@ -193,34 +186,34 @@ UIImage *bg = ...
 ```
 
 ##37.定时器一般有什么作用?以及如何使用定时器
-- 可以办到每隔一定的时间做一件事件.
+- 可以设置每隔一定的时间执行一个事件；
 通过
 
 ```
 + (NSTimer *)scheduledTimerWithTimeInterval:(NSTimeInterval)ti target:(id)aTarget selector:(SEL)aSelector userInfo:(nullable id)userInfo repeats:(BOOL)yesOrNo; 
 ```
-可以创建一个自定执行任务的定时器对象
-- 通过 - (void)invalidate这个方法可以停止定时器
+- 可以创建一个自动执行任务的定时器对象；
+- 通过 - (void)invalidate 这个方法可以停止定时器。
 
 ##38.scrollView的使用场景
-- 当内容数据一多，在可视的View中就展示不完，这时候就需要用到UIScrollView控件.
+- 当内容数据很多，在可视的View中就展示不完，这时候就需要用到UIScrollView控件.
 
-##39.UIScrollView无法滚动的原因
+##39.UIScrollView 无法滚动的原因
 - 1.没有设置contentSize,或者设置的contenSize小于等于scrollView的尺寸
 - 2.scrollEnable = NO;
 - 3.userInteractionEnable = NO; // 是否允许与用户交互
 
-##40.scrollEnable和userInteractionEnable的区别
+##40.scrollEnable和 userInteractionEnable 的区别
 - 1.scrollEnable仅仅是不能滚动，其他事件依旧能够响应
 - 2.userInteractionEnable禁止任何交互事件
 
 ##41.alwaysBounceVertical alwaysBounceHorizontal的作用
 - 不管有没有contentSize，总是有弹簧效果;作用：用来做下拉刷新和上拉刷新的
 
-##42.如何监听UIScrollView各种行为
-- 1.设置scrollView的delegate（代理）为控制器对象
-- 2.控制器要遵守协议UIScrollViewDelegate协议
-- 3.控制器要实现UIScrollViewDelegate协议里面的方法
+##42.如何监听 UIScrollView 各种行为
+- 1.设置 scrollView的delegate（代理）为控制器对象
+- 2.控制器要遵守协议 UIScrollViewDelegate 协议
+- 3.控制器要实现 UIScrollViewDelegate 协议里面的方法
 
 ##43.代理的注意点
 - 1.scrollView的代理可以是任何类型的OC 对象
@@ -427,9 +420,3 @@ NSString *ID = @"wine";
 - 侵入性:侵入性大就意味着很难离开这个框架
 - 易用性:比如少量代码实现N多功能
 - 扩展性:很容易给这个框架增加新功能
-
-
-
-
-
-
